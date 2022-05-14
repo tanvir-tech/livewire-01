@@ -11,6 +11,7 @@
     Hello world!
 
     @livewire('counter')
+    @livewire('comment')
 
     @livewireScripts
 </body>
