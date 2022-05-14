@@ -2,11 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use Carbon\Carbon;
 use Livewire\Component;
 
 class Comment extends Component
 {
-    public $text;
+    public $newComment;
     public $comments = [
         [
             'body'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, vitae!',
@@ -21,11 +22,13 @@ class Comment extends Component
 
         array_unshift($this->comments,[
             
-            'body'=>'vitae!',
-            'created_at'=>'1 min ago',
+            'body'=>$this->newComment,
+            'created_at'=>Carbon::now()->diffForHumans(),
             'creator'=>'Farhana'
             
         ]);
+
+        $this->newComment = "";
 
     }
 

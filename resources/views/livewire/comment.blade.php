@@ -1,9 +1,7 @@
 <div>
-    Comment here
-    <input type="text" wire:model="text">
+    Comment here :
+    <input type="text" wire:model.debounce.500ms="newComment">{{$newComment}}
     <br>
-    <h1>{{$text}}</h1>
-
     <button wire:click="addComment">Add comment</button>
 
     @foreach ($comments as $comment)
