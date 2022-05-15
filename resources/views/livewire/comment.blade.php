@@ -6,9 +6,14 @@
 
     @foreach ($comments as $comment)
         <p>
-            {{$comment["body"]}}
+            ::{{$comment["body"]}}
         </p>
-        <h4>{{$comment["created_at"]}}------{{$comment["creator"]}}</h4>
+        
+        ------Created at :{{$comment->created_at->diffForHumans()}}
+        <br>
+        <h4>------{{$comment["creator"]["name"]}}</h4>
+        <br>
+        ------{{$comment["creator"]}}
     @endforeach
     
 </div>
